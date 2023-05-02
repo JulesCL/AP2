@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `creneau` (
   `id_creneau` int(11) NOT NULL,
-  `datte` date DEFAULT NULL,
+  `date` date DEFAULT NULL,
   `heure` int(11) DEFAULT NULL,
   `id_sal` int(11) DEFAULT NULL,
   `id_us` int(11) DEFAULT NULL
@@ -39,7 +39,7 @@ CREATE TABLE `creneau` (
 -- Déchargement des données de la table `creneau`
 --
 
-INSERT INTO `creneau` (`id_creneau`, `datte`, `heure`, `id_sal`, `id_us`) VALUES
+INSERT INTO `creneau` (`id_creneau`, `date`, `heure`, `id_sal`, `id_us`) VALUES
 (1, '2022-02-24', 10, 2, 1),
 (2, '2022-03-03', 9, 1, 1),
 (3, '2022-03-17', 13, 3, 1),
