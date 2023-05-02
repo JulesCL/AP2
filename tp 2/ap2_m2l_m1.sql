@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `creneau` (
   `id_creneau` int NOT NULL,
-  `datte` date DEFAULT NULL,
+  `date` date DEFAULT NULL,
   `heure` int DEFAULT NULL,
   `id_sal` int DEFAULT NULL,
   `id_us` int DEFAULT NULL
@@ -39,7 +39,7 @@ CREATE TABLE `creneau` (
 -- Déchargement des données de la table `creneau`
 --
 
-INSERT INTO `creneau` (`id_creneau`, `datte`, `heure`, `id_sal`, `id_us`) VALUES
+INSERT INTO `creneau` (`id_creneau`, `date`, `heure`, `id_sal`, `id_us`) VALUES
 (9, '2023-05-02', 8, 1, 1),
 (10, '2023-05-02', 11, 3, 1),
 (11, '2023-05-02', 17, 6, 1),
@@ -51,7 +51,7 @@ INSERT INTO `creneau` (`id_creneau`, `datte`, `heure`, `id_sal`, `id_us`) VALUES
 --
 DELIMITER $$
 CREATE TRIGGER `PURGE` AFTER DELETE ON `creneau` FOR EACH ROW BEGIN
-    DELETE FROM creneau WHERE datte < DATE_SUB(NOW(), INTERVAL 2 DAY);
+    DELETE FROM creneau WHERE date < DATE_SUB(NOW(), INTERVAL 2 DAY);
 END
 $$
 DELIMITER ;
